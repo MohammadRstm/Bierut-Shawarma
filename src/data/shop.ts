@@ -4,5 +4,7 @@ export const SHOP = {
   whatsappNumber: '96171317958',
   phoneDisplay: '+961 71 317 958',
   address: 'Hamra Street, Beirut, Lebanon',
+  // Placeholder pin (Beirut) until the shop's exact location is set.
+  mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Beirut%2C+Lebanon',
   hours: 'Every day · 11:00 AM – 2:00 AM',
 };

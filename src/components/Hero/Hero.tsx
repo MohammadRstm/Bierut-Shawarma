@@ -22,7 +22,7 @@ export function Hero() {
           <a href="#menu" className="btn btn-primary">
             View Menu
           </a>
-          <a href="#visit" className="btn btn-secondary">
+          <a href={SHOP.mapsUrl} target="_blank" rel="noreferrer" className="btn btn-secondary">
             {SHOP.address}
           </a>
         </div>

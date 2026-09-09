@@ -15,8 +15,8 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  background: var(--ink);
-  color: #ffffff;
+  background: var(--cta-bg);
+  color: var(--cta-text);
   border: none;
   border-radius: var(--radius-lg);
   padding: 14px 20px;
@@ -28,7 +28,7 @@
 }
 
 .cart-bar__button:hover {
-  background: var(--ink-hover);
+  background: var(--cta-bg-hover);
 }
 
 .cart-bar__button:active {
@@ -38,7 +38,8 @@
 .cart-bar__divider {
   width: 1px;
   height: 16px;
-  background: rgba(255, 255, 255, 0.3);
+  background: currentColor;
+  opacity: 0.25;
 }
 
 .cart-bar__cta {

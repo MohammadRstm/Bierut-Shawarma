@@ -46,9 +46,9 @@
 
 .menu-filter--active,
 .menu-filter--active:hover {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: #ffffff;
+  background: var(--cta-bg);
+  border-color: var(--cta-bg);
+  color: var(--cta-text);
 }
 
 .menu-grid {

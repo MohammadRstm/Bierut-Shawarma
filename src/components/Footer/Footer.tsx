@@ -10,7 +10,9 @@ export function Footer() {
       <div className="container site-footer__inner">
         <div className="site-footer__copy">
           <h2 className="site-footer__title">Come by, or send us the order.</h2>
-          <p className="site-footer__text">{SHOP.address}</p>
+          <a className="site-footer__text site-footer__link" href={SHOP.mapsUrl} target="_blank" rel="noreferrer">
+            {SHOP.address}
+          </a>
           <p className="site-footer__text">{SHOP.hours}</p>
         </div>
         <a
