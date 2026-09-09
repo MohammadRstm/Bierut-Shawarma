@@ -7,7 +7,7 @@ import './MenuSection.css';
 
 export function MenuSection() {
   const [active, setActive] = useState<Category | 'all'>('all');
-  const { ref, visible } = useRevealOnScroll<HTMLElement>();
+  const { ref, visible } = useRevealOnScroll<HTMLDivElement>();
 
   const items = useMemo(() => {
     if (active === 'all') return MENU;
@@ -15,9 +15,9 @@ export function MenuSection() {
   }, [active]);
 
   return (
-    <section className={`menu-section${visible ? ' is-visible' : ''}`} id="menu" ref={ref}>
+    <section className="menu-section" id="menu">
       <div className="container">
-        <div className="menu-section__header">
+        <div className={`menu-section__header${visible ? ' is-visible' : ''}`} ref={ref}>
           <span className="eyebrow">Menu</span>
           <h2 className="menu-section__title">Everything made to order.</h2>
         </div>
