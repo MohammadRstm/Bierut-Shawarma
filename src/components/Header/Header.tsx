@@ -23,6 +23,7 @@ export function Header({ onOpenCart }: HeaderProps) {
         </a>
 
         <nav className="site-header__nav">
+          <a href="#offers">Offers</a>
           <a href="#menu">Menu</a>
           <a href="#visit">Visit</a>
         </nav>

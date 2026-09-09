@@ -1,4 +1,4 @@
-export type Category = 'wraps' | 'plates' | 'sides' | 'desserts' | 'drinks';
+export type Category = 'wraps' | 'plates' | 'sides' | 'desserts' | 'drinks' | 'offers';
 
 export type IllustrationKind =
   | 'wrap'
@@ -19,6 +19,7 @@ export interface MenuItem {
   name: string;
   description: string;
   price: number;
+  originalPrice?: number;
   category: Category;
   illustration: IllustrationKind;
   accent: Accent;
