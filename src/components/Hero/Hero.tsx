@@ -1,10 +1,12 @@
 import { SHOP } from '../../data/shop';
+import heroPhoto from '../../assets/photos/hero.jpg';
 import './Hero.css';
 
 export function Hero() {
   return (
     <section className="hero" id="top">
-      <div className="hero__glow" aria-hidden="true" />
+      <img src={heroPhoto} alt="" className="hero__photo" />
+      <div className="hero__overlay" aria-hidden="true" />
       <div className="container hero__inner">
         <span className="eyebrow">{SHOP.hours}</span>
         <h1 className="hero__title">

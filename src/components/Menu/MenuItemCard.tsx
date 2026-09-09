@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { Illustration } from '../Illustration/Illustration';
+import { ProductPhoto } from '../ProductPhoto/ProductPhoto';
 import type { MenuItem } from '../../types';
 import { formatPrice } from '../../utils/currency';
 import { AddToCartControl } from './AddToCartControl';
@@ -16,7 +16,7 @@ export function MenuItemCard({ item, index }: MenuItemCardProps) {
   return (
     <article className="menu-item-card" style={style}>
       <div className="menu-item-card__image">
-        <Illustration kind={item.illustration} accent={item.accent} />
+        <ProductPhoto item={item} />
       </div>
       <div className="menu-item-card__body">
         <div className="menu-item-card__row">

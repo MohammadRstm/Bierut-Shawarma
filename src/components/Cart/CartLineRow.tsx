@@ -1,5 +1,5 @@
 import { useCart } from '../../hooks/useCart';
-import { Illustration } from '../Illustration/Illustration';
+import { ProductPhoto } from '../ProductPhoto/ProductPhoto';
 import { formatPrice } from '../../utils/currency';
 import type { CartLine } from '../../types';
 
@@ -9,7 +9,7 @@ export function CartLineRow({ line }: { line: CartLine }) {
   return (
     <li className="cart-line">
       <div className="cart-line__image">
-        <Illustration kind={line.item.illustration} accent={line.item.accent} />
+        <ProductPhoto item={line.item} />
       </div>
       <div className="cart-line__info">
         <span className="cart-line__name">{line.item.name}</span>

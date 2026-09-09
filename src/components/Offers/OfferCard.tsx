@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { Illustration } from '../Illustration/Illustration';
+import { ProductPhoto } from '../ProductPhoto/ProductPhoto';
 import { AddToCartControl } from '../Menu/AddToCartControl';
 import type { MenuItem } from '../../types';
 import { formatPrice } from '../../utils/currency';
@@ -17,7 +17,7 @@ export function OfferCard({ item, index }: OfferCardProps) {
   return (
     <article className="offer-card" style={style}>
       <div className="offer-card__image">
-        <Illustration kind={item.illustration} accent={item.accent} />
+        <ProductPhoto item={item} />
         <span className="tag tag--red offer-card__badge">Special</span>
       </div>
       <div className="offer-card__body">

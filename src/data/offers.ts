@@ -12,16 +12,6 @@ export const OFFERS: MenuItem[] = [
     accent: 'yellow',
   },
   {
-    id: 'duo-wrap-combo',
-    name: 'Duo Wrap Combo',
-    description: 'Any two wraps, mixed and matched, with two cans of soda on the side.',
-    price: 9.0,
-    originalPrice: 11.0,
-    category: 'offers',
-    illustration: 'wrap',
-    accent: 'red',
-  },
-  {
     id: 'family-feast',
     name: 'Family Feast',
     description: 'Mixed grill plate for four, with hummus, fattoush, fries and warm bread.',

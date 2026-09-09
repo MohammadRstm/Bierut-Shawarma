@@ -29,11 +29,7 @@
   aspect-ratio: 16 / 9;
   background: var(--bg-warm);
   border-bottom: 1px solid var(--border);
-}
-
-.offer-card__image svg {
-  width: 100%;
-  height: 100%;
+  overflow: hidden;
 }
 
 .offer-card__badge {
