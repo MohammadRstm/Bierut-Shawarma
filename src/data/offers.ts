@@ -4,7 +4,9 @@ export const OFFERS: MenuItem[] = [
   {
     id: 'lunch-deal',
     name: 'Lunch Deal',
+    nameAr: 'عرض الغداء',
     description: 'Chicken tawouk wrap, fries and a can of your choice. Served every day until 5pm.',
+    descriptionAr: 'شاورما تاووق دجاج مع بطاطا مقلية وعلبة مشروب من اختيارك، يوميًا حتى الساعة الخامسة.',
     price: 7.0,
     originalPrice: 8.75,
     category: 'offers',
@@ -14,7 +16,9 @@ export const OFFERS: MenuItem[] = [
   {
     id: 'family-feast',
     name: 'Family Feast',
+    nameAr: 'وجبة العائلة',
     description: 'Mixed grill plate for four, with hummus, fattoush, fries and warm bread.',
+    descriptionAr: 'صحن مشاوي مشكّل لأربعة أشخاص، مع الحمص والفتوش والبطاطا والخبز.',
     price: 28.0,
     originalPrice: 34.0,
     category: 'offers',
@@ -24,7 +28,9 @@ export const OFFERS: MenuItem[] = [
   {
     id: 'date-night-duo',
     name: 'Date Night Duo',
+    nameAr: 'عشاء لشخصين',
     description: 'Two mixed grill plates with two fresh lemon mints, table for two.',
+    descriptionAr: 'صحنا مشاوي مشكّل مع كأسي ليمون بالنعنع، طاولة لشخصين.',
     price: 23.0,
     originalPrice: 27.0,
     category: 'offers',

@@ -17,7 +17,9 @@ export type Accent = 'red' | 'blue' | 'green' | 'yellow';
 export interface MenuItem {
   id: string;
   name: string;
+  nameAr: string;
   description: string;
+  descriptionAr: string;
   price: number;
   originalPrice?: number;
   category: Category;

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { CartProvider } from './context/CartContext';
+import { LanguageProvider } from './context/LanguageContext';
 import { Header } from './components/Header/Header';
 import { Hero } from './components/Hero/Hero';
 import { OffersSection } from './components/Offers/OffersSection';
@@ -12,17 +13,19 @@ function App() {
   const [cartOpen, setCartOpen] = useState(false);
 
   return (
-    <CartProvider>
-      <Header onOpenCart={() => setCartOpen(true)} />
-      <main>
-        <Hero />
-        <OffersSection />
-        <MenuSection />
-      </main>
-      <Footer />
-      <CartBar onOpen={() => setCartOpen(true)} />
-      <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
-    </CartProvider>
+    <LanguageProvider>
+      <CartProvider>
+        <Header onOpenCart={() => setCartOpen(true)} />
+        <main>
+          <Hero />
+          <OffersSection />
+          <MenuSection />
+        </main>
+        <Footer />
+        <CartBar onOpen={() => setCartOpen(true)} />
+        <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
+      </CartProvider>
+    </LanguageProvider>
   );
 }
 

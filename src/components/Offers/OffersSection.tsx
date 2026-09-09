@@ -1,16 +1,18 @@
 import { OFFERS } from '../../data/offers';
+import { useLanguage } from '../../hooks/useLanguage';
 import { OfferCard } from './OfferCard';
 import './OffersSection.css';
 
 export function OffersSection() {
+  const { strings } = useLanguage();
   if (OFFERS.length === 0) return null;
 
   return (
     <section className="offers-section" id="offers">
       <div className="container">
         <div className="offers-section__header">
-          <span className="eyebrow">Special offers</span>
-          <h2 className="offers-section__title">Deals worth ordering for.</h2>
+          <span className="eyebrow">{strings.offers.eyebrow}</span>
+          <h2 className="offers-section__title">{strings.offers.title}</h2>
         </div>
       </div>
 

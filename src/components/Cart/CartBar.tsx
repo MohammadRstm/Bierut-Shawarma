@@ -1,4 +1,5 @@
 import { useCart } from '../../hooks/useCart';
+import { useLanguage } from '../../hooks/useLanguage';
 import { formatPrice } from '../../utils/currency';
 import './CartBar.css';
 
@@ -8,18 +9,17 @@ interface CartBarProps {
 
 export function CartBar({ onOpen }: CartBarProps) {
   const { totalCount, totalPrice } = useCart();
+  const { strings } = useLanguage();
 
   if (totalCount === 0) return null;
 
   return (
     <div className="cart-bar">
       <button type="button" className="cart-bar__button" onClick={onOpen}>
-        <span>
-          {totalCount} item{totalCount > 1 ? 's' : ''}
-        </span>
+        <span>{strings.cart.itemsLabel(totalCount)}</span>
         <span className="cart-bar__divider" aria-hidden="true" />
         <span>{formatPrice(totalPrice)}</span>
-        <span className="cart-bar__cta">View order</span>
+        <span className="cart-bar__cta">{strings.cart.viewOrder}</span>
       </button>
     </div>
   );

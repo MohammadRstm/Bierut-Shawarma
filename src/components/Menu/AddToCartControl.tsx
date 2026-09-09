@@ -1,4 +1,5 @@
 import { useCart } from '../../hooks/useCart';
+import { useLanguage } from '../../hooks/useLanguage';
 import type { MenuItem } from '../../types';
 
 interface AddToCartControlProps {
@@ -10,12 +11,14 @@ interface AddToCartControlProps {
 
 export function AddToCartControl({
   item,
-  addLabel = 'Add to order',
+  addLabel,
   addClassName = 'btn btn-secondary',
   stepperClassName = 'stepper',
 }: AddToCartControlProps) {
   const { lines, addItem, setQuantity } = useCart();
+  const { language, strings } = useLanguage();
   const line = lines.find((entry) => entry.item.id === item.id);
+  const name = language === 'ar' ? item.nameAr : item.name;
 
   if (line) {
     return (
@@ -23,7 +26,7 @@ export function AddToCartControl({
         <button
           type="button"
           onClick={() => setQuantity(item.id, line.quantity - 1)}
-          aria-label={`Remove one ${item.name}`}
+          aria-label={strings.cart.removeOneAria(name)}
         >
           −
         </button>
@@ -31,7 +34,7 @@ export function AddToCartControl({
         <button
           type="button"
           onClick={() => setQuantity(item.id, line.quantity + 1)}
-          aria-label={`Add one more ${item.name}`}
+          aria-label={strings.cart.addOneMoreAria(name)}
         >
           +
         </button>
@@ -41,7 +44,7 @@ export function AddToCartControl({
 
   return (
     <button type="button" className={addClassName} onClick={() => addItem(item)}>
-      {addLabel}
+      {addLabel ?? strings.menu.addButton}
     </button>
   );
 }

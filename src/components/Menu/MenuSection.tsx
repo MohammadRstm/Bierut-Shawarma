@@ -2,12 +2,14 @@ import { useMemo, useState } from 'react';
 import { CATEGORIES, MENU } from '../../data/menu';
 import type { Category } from '../../types';
 import { useRevealOnScroll } from '../../hooks/useRevealOnScroll';
+import { useLanguage } from '../../hooks/useLanguage';
 import { MenuItemCard } from './MenuItemCard';
 import './MenuSection.css';
 
 export function MenuSection() {
   const [active, setActive] = useState<Category | 'all'>('all');
   const { ref, visible } = useRevealOnScroll<HTMLDivElement>();
+  const { strings } = useLanguage();
 
   const items = useMemo(() => {
     if (active === 'all') return MENU;
@@ -18,21 +20,21 @@ export function MenuSection() {
     <section className="menu-section" id="menu">
       <div className="container">
         <div className={`menu-section__header${visible ? ' is-visible' : ''}`} ref={ref}>
-          <span className="eyebrow">Menu</span>
-          <h2 className="menu-section__title">Everything made to order.</h2>
+          <span className="eyebrow">{strings.menu.eyebrow}</span>
+          <h2 className="menu-section__title">{strings.menu.title}</h2>
         </div>
 
         <div className="menu-section__filters" role="tablist" aria-label="Menu categories">
-          {CATEGORIES.map((category) => (
+          {CATEGORIES.map((categoryId) => (
             <button
-              key={category.id}
+              key={categoryId}
               type="button"
               role="tab"
-              aria-selected={active === category.id}
-              className={`menu-filter${active === category.id ? ' menu-filter--active' : ''}`}
-              onClick={() => setActive(category.id)}
+              aria-selected={active === categoryId}
+              className={`menu-filter${active === categoryId ? ' menu-filter--active' : ''}`}
+              onClick={() => setActive(categoryId)}
             >
-              {category.label}
+              {strings.menu.categories[categoryId]}
             </button>
           ))}
         </div>

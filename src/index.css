@@ -36,9 +36,9 @@
   --accent-yellow-text: #f2c574;
 
   /* Type */
-  --font-serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
-  --font-sans: 'Manrope', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  --font-serif: 'Newsreader', 'Markazi Text', 'Iowan Old Style', Georgia, serif;
+  --font-sans: 'Manrope', 'Cairo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cairo', 'SF Mono', Menlo, monospace;
 
   /* Radius */
   --radius-sm: 4px;
@@ -83,6 +83,21 @@ h4 {
   color: var(--ink);
 }
 
+/* Negative tracking and forced uppercase break Arabic's connected letterforms */
+[dir='rtl'] h1,
+[dir='rtl'] h2,
+[dir='rtl'] h3,
+[dir='rtl'] h4 {
+  letter-spacing: 0;
+}
+
+[dir='rtl'] .eyebrow,
+[dir='rtl'] .tag,
+[dir='rtl'] .cart-bar__cta {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
 p {
   margin: 0;
 }
@@ -123,6 +138,12 @@ ul {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-muted);
+}
+
+.btn__icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 .btn {

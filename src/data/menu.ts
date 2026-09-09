@@ -1,20 +1,17 @@
 import type { Category, MenuItem } from '../types';
 
-export const CATEGORIES: { id: Category | 'all'; label: string }[] = [
-  { id: 'all', label: 'All' },
-  { id: 'wraps', label: 'Wraps' },
-  { id: 'plates', label: 'Plates' },
-  { id: 'sides', label: 'Sides & Salads' },
-  { id: 'desserts', label: 'Desserts' },
-  { id: 'drinks', label: 'Drinks' },
-];
+type MenuCategory = Exclude<Category, 'offers'>;
+
+export const CATEGORIES: (MenuCategory | 'all')[] = ['all', 'wraps', 'plates', 'sides', 'desserts', 'drinks'];
 
 export const MENU: MenuItem[] = [
   // Wraps
   {
     id: 'chicken-shawarma-wrap',
     name: 'Chicken Shawarma Wrap',
+    nameAr: 'شاورما دجاج',
     description: 'Marinated chicken thigh, shaved off the spit and rolled in saj bread with garlic sauce and pickles.',
+    descriptionAr: 'دجاج متبّل مشوي على السيخ، ملفوف بخبز الصاج مع الثومية والمخلل.',
     price: 4.5,
     category: 'wraps',
     illustration: 'wrap',
@@ -25,7 +22,9 @@ export const MENU: MenuItem[] = [
   {
     id: 'chicken-shawarma-plate',
     name: 'Chicken Shawarma Plate',
+    nameAr: 'صحن شاورما دجاج',
     description: 'Shaved chicken shawarma over vermicelli rice, with garlic sauce and pickled turnip.',
+    descriptionAr: 'شاورما دجاج فوق الرز بالشعيرية، مع الثومية واللفت المخلل.',
     price: 8.5,
     category: 'plates',
     illustration: 'plate',
@@ -36,7 +35,9 @@ export const MENU: MenuItem[] = [
   {
     id: 'hummus',
     name: 'Hummus',
+    nameAr: 'حمص',
     description: 'Blended chickpeas, tahini and lemon, finished with a swirl of olive oil.',
+    descriptionAr: 'حمص بالطحينة والليمون، يُقدّم مع خيط من زيت الزيتون.',
     price: 4.0,
     category: 'sides',
     illustration: 'dip',
@@ -45,7 +46,9 @@ export const MENU: MenuItem[] = [
   {
     id: 'fattoush',
     name: 'Fattoush',
+    nameAr: 'فتوش',
     description: 'Romaine, radish and tomato with toasted saj bread, tossed in pomegranate molasses.',
+    descriptionAr: 'خس وفجل وبندورة مع خبز صاج محمّص، بدبس الرمان.',
     price: 4.75,
     category: 'sides',
     illustration: 'salad',
@@ -54,7 +57,9 @@ export const MENU: MenuItem[] = [
   {
     id: 'fries',
     name: 'French Fries',
+    nameAr: 'بطاطا مقلية',
     description: 'Hand-cut potatoes, fried crisp and salted.',
+    descriptionAr: 'بطاطا مقطّعة يدويًا ومقلية حتى تصبح مقرمشة.',
     price: 3.0,
     category: 'sides',
     illustration: 'fries',
@@ -65,7 +70,9 @@ export const MENU: MenuItem[] = [
   {
     id: 'baklava',
     name: 'Baklava',
+    nameAr: 'بقلاوة',
     description: 'Layered filo pastry with crushed pistachio, soaked in orange blossom syrup.',
+    descriptionAr: 'عجين رقيق محشو بالفستق الحلبي، منقوع بشراب زهر البرتقال.',
     price: 3.5,
     category: 'desserts',
     illustration: 'dessert',
@@ -76,7 +83,9 @@ export const MENU: MenuItem[] = [
   {
     id: 'pepsi',
     name: 'Pepsi',
+    nameAr: 'بيبسي',
     description: 'Classic 330ml can, ice cold.',
+    descriptionAr: 'علبة 330 مل، باردة جدًا.',
     price: 1.5,
     category: 'drinks',
     illustration: 'can',
@@ -85,7 +94,9 @@ export const MENU: MenuItem[] = [
   {
     id: 'mirinda',
     name: 'Mirinda Orange',
+    nameAr: 'ميرندا برتقال',
     description: 'Orange soda, 330ml can.',
+    descriptionAr: 'مشروب غازي بنكهة البرتقال، علبة 330 مل.',
     price: 1.5,
     category: 'drinks',
     illustration: 'can',
@@ -94,7 +105,9 @@ export const MENU: MenuItem[] = [
   {
     id: '7up',
     name: '7Up',
+    nameAr: 'سفن أب',
     description: 'Lemon-lime soda, 330ml can.',
+    descriptionAr: 'مشروب غازي بنكهة الليمون، علبة 330 مل.',
     price: 1.5,
     category: 'drinks',
     illustration: 'can',
@@ -103,7 +116,9 @@ export const MENU: MenuItem[] = [
   {
     id: 'water',
     name: 'Bottled Water',
+    nameAr: 'مياه معدنية',
     description: 'Still water, 500ml.',
+    descriptionAr: 'مياه ساكنة، 500 مل.',
     price: 1.0,
     category: 'drinks',
     illustration: 'bottle',
@@ -112,7 +127,9 @@ export const MENU: MenuItem[] = [
   {
     id: 'sparkling-water',
     name: 'Sparkling Water',
+    nameAr: 'مياه غازية',
     description: 'Chilled sparkling water, 330ml.',
+    descriptionAr: 'مياه غازية باردة، 330 مل.',
     price: 1.75,
     category: 'drinks',
     illustration: 'bottle',
@@ -121,7 +138,9 @@ export const MENU: MenuItem[] = [
   {
     id: 'ayran',
     name: 'Ayran',
+    nameAr: 'عيران',
     description: 'Chilled yogurt drink, lightly salted.',
+    descriptionAr: 'مشروب لبن بارد، مملّح بلطف.',
     price: 2.0,
     category: 'drinks',
     illustration: 'cup',
@@ -130,7 +149,9 @@ export const MENU: MenuItem[] = [
   {
     id: 'limonana',
     name: 'Fresh Lemon Mint',
+    nameAr: 'ليمون بالنعنع',
     description: 'Fresh lemon juice blended with mint, made to order.',
+    descriptionAr: 'عصير ليمون طازج مع النعنع، يُحضّر عند الطلب.',
     price: 3.0,
     category: 'drinks',
     illustration: 'glass',
@@ -139,7 +160,9 @@ export const MENU: MenuItem[] = [
   {
     id: 'jallab',
     name: 'Jallab',
+    nameAr: 'جلاب',
     description: 'Date and grape molasses with rosewater over ice, topped with pine nuts.',
+    descriptionAr: 'دبس التمر والعنب مع ماء الورد فوق الثلج، يُزيّن بالصنوبر.',
     price: 3.0,
     category: 'drinks',
     illustration: 'cup',
@@ -148,7 +171,9 @@ export const MENU: MenuItem[] = [
   {
     id: 'orange-juice',
     name: 'Fresh Orange Juice',
+    nameAr: 'عصير برتقال طازج',
     description: 'Squeezed to order, no added sugar.',
+    descriptionAr: 'يُعصر عند الطلب، بدون سكر مضاف.',
     price: 3.5,
     category: 'drinks',
     illustration: 'glass',
