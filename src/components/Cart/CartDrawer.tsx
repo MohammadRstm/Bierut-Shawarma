@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useCart } from '../../hooks/useCart';
 import { formatPrice } from '../../utils/currency';
+import { buildOrderMessage, buildWhatsAppLink } from '../../utils/whatsapp';
 import { CartLineRow } from './CartLineRow';
-import { OrderForm } from './OrderForm';
 import './CartDrawer.css';
 
 interface CartDrawerProps {
@@ -10,11 +10,10 @@ interface CartDrawerProps {
   onClose: () => void;
 }
 
-type Step = 'cart' | 'details' | 'sent';
+type Step = 'cart' | 'sent';
 
 const TITLES: Record<Step, string> = {
   cart: 'Your order',
-  details: 'Your details',
   sent: 'Order sent',
 };
 
@@ -27,7 +26,9 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
     window.setTimeout(() => setStep('cart'), 300);
   }
 
-  function handleSent() {
+  function handleSend() {
+    const message = buildOrderMessage(lines, totalPrice);
+    window.open(buildWhatsAppLink(message), '_blank', 'noopener,noreferrer');
     clear();
     setStep('sent');
   }
@@ -57,13 +58,11 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
           </div>
         )}
 
-        {step === 'details' && <OrderForm onBack={() => setStep('cart')} onSent={handleSent} />}
-
         {step === 'sent' && (
           <div className="cart-drawer__body cart-drawer__sent">
             <p>
-              WhatsApp should be open with your order ready to send. Once you tap send there, we&apos;ll confirm your
-              order on WhatsApp.
+              WhatsApp should be open with your order ready to send. Tap send there and let us know your name,
+              pickup or delivery, and address if needed — we&apos;ll confirm your order on WhatsApp.
             </p>
             <button type="button" className="btn btn-secondary" onClick={handleClose}>
               Done
@@ -77,8 +76,8 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
               <span>Total</span>
               <span>{formatPrice(totalPrice)}</span>
             </div>
-            <button type="button" className="btn btn-primary cart-drawer__continue" onClick={() => setStep('details')}>
-              Continue
+            <button type="button" className="btn btn-primary cart-drawer__continue" onClick={handleSend}>
+              Send order on WhatsApp
             </button>
           </div>
         )}

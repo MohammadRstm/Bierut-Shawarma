@@ -29,13 +29,3 @@ export interface CartLine {
   item: MenuItem;
   quantity: number;
 }
-
-export type OrderType = 'pickup' | 'delivery';
-
-export interface OrderDetails {
-  name: string;
-  phone: string;
-  orderType: OrderType;
-  address: string;
-  notes: string;
-}

@@ -10,11 +10,12 @@ React 19, TypeScript, Vite, plain CSS. No routing or API layer — this is a sin
 
 ## Before deploying
 
-The owner's WhatsApp number is a placeholder in [`src/data/shop.ts`](src/data/shop.ts). Update:
+The owner's WhatsApp number lives in [`src/data/shop.ts`](src/data/shop.ts) — it's currently set to a testing
+number. Confirm it's the right one (or swap it) before going live:
 
 ```ts
-whatsappNumber: '96170000000', // digits only, country code, no + or spaces
-phoneDisplay: '+961 70 000 000',
+whatsappNumber: '96171317958', // digits only, country code, no + or spaces
+phoneDisplay: '+961 71 317 958',
 ```
 
 ## Local development
