@@ -1,0 +1,50 @@
+.cart-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+  pointer-events: none;
+  z-index: 55;
+}
+
+.cart-bar__button {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--ink);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-panel);
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.cart-bar__button:hover {
+  background: var(--ink-hover);
+}
+
+.cart-bar__button:active {
+  transform: scale(0.98);
+}
+
+.cart-bar__divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.cart-bar__cta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.85;
+}

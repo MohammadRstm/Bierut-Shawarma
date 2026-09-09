@@ -1,0 +1,49 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-warm);
+  border-bottom: 1px solid var(--border);
+  padding: 100px 0 68px;
+}
+
+.hero__glow {
+  position: absolute;
+  inset: -25% -10% auto -10%;
+  height: 520px;
+  pointer-events: none;
+  background: radial-gradient(circle at 28% 30%, rgba(159, 47, 45, 0.06), transparent 60%),
+    radial-gradient(circle at 74% 55%, rgba(31, 108, 159, 0.06), transparent 55%);
+}
+
+.hero__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+  max-width: 760px;
+}
+
+.hero__title {
+  font-size: clamp(38px, 6vw, 64px);
+}
+
+.hero__subtitle {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 560px;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+@media (max-width: 720px) {
+  .hero {
+    padding: 76px 0 52px;
+  }
+}
